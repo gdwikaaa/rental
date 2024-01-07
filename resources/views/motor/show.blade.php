@@ -13,10 +13,10 @@
             <div class="card-header">Tampilkan</div>
             <div class="card-body">
                   <div class="card-body">
-                  <p class="card-text">Kode motor   : {{ $motormotor->nopol }}</p>
-                  <p class="card-text">Nama motor      : {{ $motormotor->nama }}</p>
-                  <p class="card-text">harga            : {{ $motormotor->harga }}</p>
-                  <p class="card-text">Jenis motor            : {{ $motormotor->jenismotor->nama }}</p>
+                  <p class="card-text">No Polisi   : {{ $motormotor->nopol }}</p>
+                  <p class="card-text">Nama     : {{ $motormotor->nama }}</p>
+                  <p class="card-text">Harga per Hari           : {{ $motormotor->harga }}</p>
+                  <p class="card-text">Jenis Motor            : {{ $motormotor->jenismotor->nama }}</p>
                   <p class="card-text">Merk             : {{ $motormotor->merkmotor->nama }}</p>
                   <img src="{{ asset('storage/gambar-user/'.$motormotor->gambar) }}" alt="" width="400px" class="img-thumbnail">
                 </div>

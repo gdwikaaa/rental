@@ -31,7 +31,7 @@
                     <label class="form-label @error('noktp') text-danger @enderror">No KTP</label>
                     <input class="form-control @error('noktp') is-invalid @enderror" type="text" name="noktp" value="{{old('noktp')}}">
                     @error('noktp')
-                    <div class="invalid-feedback mb-2">nopol wajin diisi</div?>
+                    <div class="invalid-feedback mb-2">No KTP Wajib Diisi</div?>
                         @enderror
                 </div>
                 <div>
@@ -78,6 +78,7 @@
                         </select>
                     </div>
                     <div>
+                    </div>  
             <div class="card-footer">
                 <button type="submit" href="{{ url('/') }}" class="btn btn-primary">Simpan</button>
             </div>

@@ -79,14 +79,6 @@
                         </select>
                     </div>
                     <div>
-                        {{-- <label for="date"class="form-label @error('date') text-danger @enderror">Tanggal Pinjam</label>
-                        <input class="form-control @error('tanggal') is-invalid @enderror" type="date" name="date">
-                            @error('date')
-                            <div class="invalid-feedback mb-2">{{$message }}</div?>
-                                @enderror
-                    </select>
-                </div> --}}
-
             </div>
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Simpan</button>

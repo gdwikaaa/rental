@@ -26,7 +26,7 @@
                     <tr>
                         <th scope="col">Nomor Polisi</th>
                         <th scope="col">Nama Motor</th>
-                        <th scope="col">Harga</th>
+                        <th scope="col">Harga per Hari</th>
                         <th scope="col">Jenis Motor</th>
                         <th scope="col">Merk</th>
                         <th scope="col">Gambar</th>

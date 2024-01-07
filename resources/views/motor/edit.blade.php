@@ -15,6 +15,7 @@
             </div>
         </div>
         <form action="{{ url('/motor/' . $id) }}" method="POST">
+            <div class="card-body">
             @csrf
             @method('PUT')
             <div>

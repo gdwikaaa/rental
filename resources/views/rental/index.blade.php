@@ -49,17 +49,20 @@
                                 <img src="{{ asset('storage/gambar-ktp/'.$d->gambarktp) }}" alt="" width="150px" class="img-thumbnail">
                             </td>
                             <td class="float-end">
+                                @can('tambah-motor')
                                 <a class="btn btn-sm btn-warning"
                                     href="{{ url('/rental/' . $d->id . '/edit') }}">Ubah</a>
                                     <a class="btn btn-sm btn-info"
-                                    href="{{ url('/rental/' . $d->id) }}">Lihat
-                                </a>
+                                    href="{{ url('/rental/' . $d->id) }}">Lihat</a>
+                                    
                                 <form style="display: inline;" action="{{ url('/rental/' . $d->id) }}" method ="POST">
                                     @csrf
                                     @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                                </form>
                             </td>
                         </tr>
+                        @endcan
                     @endforeach
                 </tbody>
             </table>
