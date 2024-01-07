@@ -82,11 +82,6 @@ class MotorController extends Controller
     {
         $motor->load('jenismotor');
         $motor->load('merkmotor');
-        // ->select("motor.id", "nopol", "motor.nama","motor.harga", "jenismotor_id", "jenismotor.nama AS jenismotor_nama" ,"merkmotor_id", "merkmotor.nama AS merkmotor_nama")
-        // ->join('merkmotor', 'merkmotor.id', '=', 'motor.merkmotor_id')
-        // ->join('jenismotor', 'jenismotor.id', '=', 'motor.jenismotor_id')
-        // ->where('motor.id', $id)
-        // ->first();
 
         $jenismotor = jenismotor::all();
         $merkmotor = merkmotor::all();
@@ -98,12 +93,7 @@ class MotorController extends Controller
     {
         $motor->load('jenismotor');
         $motor->load('merkmotor');
-        // $motor = DB::table('motor')
-        // ->select("motor.id", "nopol", "motor.nama","motor.harga", "jenismotor_id", "jenismotor.nama AS jenismotor_nama" ,"merkmotor_id", "merkmotor.nama AS merkmotor_nama")
-        // ->join('merkmotor', 'merkmotor.id', '=', 'motor.merkmotor_id')
-        // ->join('jenismotor', 'jenismotor.id', '=', 'motor.jenismotor_id')
-        // ->where('motor.id', $id)
-        // ->first();
+
 
         $jenismotor = jenismotor::all();
         $merkmotor = merkmotor::all();

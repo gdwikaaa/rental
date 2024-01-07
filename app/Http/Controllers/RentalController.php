@@ -40,7 +40,6 @@ class RentalController extends Controller
             'noktp' => ['required', 'min:3', 'max:10'],
             'nama' => 'required',
             'motor' => ['required', 'exists:motor,id'],
-            // 'jenismotor' => ['required', 'exists:jenismotor,id'],
             'tanggalpinjam' => 'required',
             'tanggalselesai' => 'required',
             'gambarktp' => 'required|mimes:png,jpg,jpeg|max:2048',
@@ -84,11 +83,6 @@ class RentalController extends Controller
     public function edit(rental $rental)
     {
         $rental->load('motor');
-        // ->select("motor.id", "nopol", "motor.nama","motor.harga", "jenismotor_id", "jenismotor.nama AS jenismotor_nama" ,"merkmotor_id", "merkmotor.nama AS merkmotor_nama")
-        // ->join('merkmotor', 'merkmotor.id', '=', 'motor.merkmotor_id')
-        // ->join('jenismotor', 'jenismotor.id', '=', 'motor.jenismotor_id')
-        // ->where('motor.id', $id)
-        // ->first();
 
         $motor = motor::all();
 
@@ -98,12 +92,6 @@ class RentalController extends Controller
     public function show(rental $rental)
     {
         $rental->load('motor');
-        // $motor = DB::table('motor')
-        // ->select("motor.id", "nopol", "motor.nama","motor.harga", "jenismotor_id", "jenismotor.nama AS jenismotor_nama" ,"merkmotor_id", "merkmotor.nama AS merkmotor_nama")
-        // ->join('merkmotor', 'merkmotor.id', '=', 'motor.merkmotor_id')
-        // ->join('jenismotor', 'jenismotor.id', '=', 'motor.jenismotor_id')
-        // ->where('motor.id', $id)
-        // ->first();
 
         $motor = motor::all();
 
