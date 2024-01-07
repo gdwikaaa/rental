@@ -14,7 +14,7 @@
                 <h4 class="card-title">Form Ubah sparepart</h4>
             </div>
         </div>
-        <form action="{{ url('/sparepart/' . $id) }}" method="POST">
+        <form action="{{ url('/rental/' . $id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="card-body">

@@ -5,22 +5,22 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\motor;
 use App\Models\merkmotor;
 use App\Models\jenismotor;
+use App\Models\Motor;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules\File;
 use Illuminate\Support\Facades\Validator;
 
-class HomeController extends Controller
+class MotorController extends Controller
 {
 
     public function index()
     {
-        $motor = motor::with('merkmotor')->get();
-  
+        $motor = Motor::with('merkmotor')->get();
+        $motor = Motor::with('jenismotor')->get();
 
-        return view('home.index', ['motormotor' => $motor]);
+        return view('motor.index', ['motormotor' => $motor]);
     }
 
     public function create()
@@ -62,7 +62,7 @@ class HomeController extends Controller
             'gambar' => $filename,
         ]);
 
-        return redirect(url('/'));
+        return redirect(url('/motor'));
     }
 
     public function update(Request $request, motor $motor)
@@ -75,7 +75,7 @@ class HomeController extends Controller
             'merkmotor_id' => $request->merkmotor,
         ]);
 
-        return redirect(url('/'));
+        return redirect(url('/motor'));
     }
 
     public function edit(motor $motor)
@@ -114,6 +114,6 @@ class HomeController extends Controller
     {
         $motor->delete();
 
-        return redirect(url('/'));
+        return redirect(url('/motor'));
 }
 }

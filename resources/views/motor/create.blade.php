@@ -1,10 +1,10 @@
 
 @extends('layout.master')
 
-@section('title', 'Tambah Ban')
+@section('title', 'Tambah motor')
 
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="{{ url('/ban') }}">BAN</a></li>
+    <li class="breadcrumb-item"><a href="{{ url('/motor') }}">motor</a></li>
     <li class="breadcrumb-item active">Tambah</li>
 @endsection
 
@@ -21,16 +21,16 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <h4 class="card-title">Form Tambah Ban</h4>
+                <h4 class="card-title">Form Tambah motor</h4>
             </div>
         </div>
-        <form action="{{ url('/ban') }}" method="POST" enctype="multipart/form-data"> 
+        <form action="{{ url('/motor') }}" method="POST" enctype="multipart/form-data"> 
             <div class="card-body">
                 @csrf
                 <div>
-                    <label class="form-label @error('kdban') text-danger @enderror">Kode BAN</label>
-                    <input class="form-control @error('kdban') is-invalid @enderror" type="text" name="kdban" value="{{old('kdban')}}">
-                    @error('kdban')
+                    <label class="form-label @error('nopol') text-danger @enderror">No Polisi</label>
+                    <input class="form-control @error('nopol') is-invalid @enderror" type="text" name="nopol" value="{{old('nopol')}}">
+                    @error('nopol')
                     <div class="invalid-feedback mb-2">{{$message }}</div?>
                         @enderror
                 </div>
@@ -49,29 +49,29 @@
                         @enderror
                 </div>
                 <div>
-                    <label class="form-label @error('jenisban') text-danger @enderror">Jenis</label>
-                    <select class="form-select @error('jenisban') is-invalid @enderror" name="jenisban">
-                        @foreach ($jenisban as $jb)
-                            <option value="{{ $jb->id }}" {{old('jenisban') == $jb->id ? 'selected' : ''}} >{{ $jb->nama }}</option>
+                    <label class="form-label @error('jenismotor') text-danger @enderror">Jenis</label>
+                    <select class="form-select @error('jenismotor') is-invalid @enderror" name="jenismotor">
+                        @foreach ($jenismotor as $jb)
+                            <option value="{{ $jb->id }}" {{old('jenismotor') == $jb->id ? 'selected' : ''}} >{{ $jb->nama }}</option>
                         @endforeach
-                        @error('jenisban')
+                        @error('jenismotor')
                         <div class="invalid-feedback mb-2">{{$message }}</div?>
                             @enderror
                     </select>
                 </div>
                 <div>
-                    <label class="form-label @error('merkban') text-danger @enderror">Merk</label>
-                    <select class="form-select @error('merkban') is-invalid @enderror" name="merkban">
-                        @foreach ($merkban as $mb)
-                            <option value="{{ $mb->id }}" {{old('merkban') == $mb->id ? 'selected' : ''}}>{{ $mb->nama }}</option>
+                    <label class="form-label @error('merkmotor') text-danger @enderror">Merk</label>
+                    <select class="form-select @error('merkmotor') is-invalid @enderror" name="merkmotor">
+                        @foreach ($merkmotor as $mb)
+                            <option value="{{ $mb->id }}" {{old('merkmotor') == $mb->id ? 'selected' : ''}}>{{ $mb->nama }}</option>
                         @endforeach
-                        @error('merkban')
+                        @error('merkmotor')
                         <div class="invalid-feedback mb-2">{{$message }}</div?>
                             @enderror
                         </select>
                 </div>
                 <div>
-                    <label for="gambar"class="form-label @error('gambar') text-danger @enderror">Gambar Ban</label>
+                    <label for="gambar"class="form-label @error('gambar') text-danger @enderror">Gambar motor</label>
                     <input class="form-control @error('gambar') is-invalid @enderror" type="file" name="gambar">
                         @error('gambar')
                         <div class="invalid-feedback mb-2">{{$message }}</div?>
@@ -79,13 +79,13 @@
                         </select>
                     </div>
                     <div>
-                        <label for="date"class="form-label @error('date') text-danger @enderror">Tanggal Pinjam</label>
+                        {{-- <label for="date"class="form-label @error('date') text-danger @enderror">Tanggal Pinjam</label>
                         <input class="form-control @error('tanggal') is-invalid @enderror" type="date" name="date">
                             @error('date')
                             <div class="invalid-feedback mb-2">{{$message }}</div?>
                                 @enderror
                     </select>
-                </div>
+                </div> --}}
 
             </div>
             <div class="card-footer">

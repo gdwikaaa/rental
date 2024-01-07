@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\motor;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -28,5 +30,31 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('user'),
             'role_id' => 2
         ]);
+
+        \App\Models\merkmotor::create([
+            'nama' => 'Kawasaki'
+        ]);
+
+        \App\Models\merkmotor::create([
+            'nama' => 'Honda'
+        ]);
+
+        \App\Models\merkmotor::create([
+            'nama' => 'Yamaha'
+        ]);
+
+        \App\Models\jenismotor::create([
+            'nama' => 'Sport'
+        ]);
+
+        \App\Models\jenismotor::create([
+            'nama' => 'Matic'
+        ]);
+
+        \App\Models\jenismotor::create([
+            'nama' => 'Bebek'
+        ]);
+
+    
     }
 }

@@ -13,13 +13,14 @@
         @php
             $menu = [
             ['url' => '/',               'name' => 'Home'], 
-            ['url' => 'sparepart',       'name' => 'Sparepart'], 
-            ['url' => 'ban',              'name' => 'Ban']];
+            ['url' => 'rental',       'name' => 'Daftar Rental'], 
+            ['url' => 'motor',              'name' => 'Daftar Motor']];
         @endphp
-
+                    @can('tambah-motor')
         @foreach ($menu as $m)
             @include('layout.nav-item', ['menu' => $m])
         @endforeach
+        @endcan
         @if (Auth::check())
             
         <li class="nav-item">

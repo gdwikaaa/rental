@@ -22,7 +22,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Gate::define('tambah-ban', function (User $user) {
+        Gate::define('tambah-motor', function (User $user) {
             return $user->role_id == 1;
         });
     }

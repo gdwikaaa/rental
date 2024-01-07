@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\banController;
+use App\Http\Controllers\MotorController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
-use App\Http\Controllers\SparepartController;
+use App\Http\Controllers\RentalController;
+use App\Http\Controllers\SelesaiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,23 +30,24 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
-Route::controller(SparepartController::class)->prefix("sparepart")->group(function () {
+Route::controller(RentalController::class)->prefix("rental")->group(function () {
     Route::get('/', 'index');
     Route::post('/', 'store');
     Route::get('/create', 'create');
-    Route::get('/{sparepart}', 'show');
-    Route::put('/{sparepart}', 'update');
-    Route::delete('/{sparepart}', 'destroy');
-    Route::get('/{sparepart}/edit', 'edit');
+    Route::get('/{rental}', 'show');
+    Route::put('/{rental}', 'update');
+    Route::delete('/{rental}', 'destroy');
+    Route::get('/{rental}/edit', 'edit');
 });
 
-Route::controller(BanController::class)->prefix("ban")->group(function () {
+Route::controller(MotorController::class)->prefix("motor")->group(function () {
     Route::get('/', 'index');
     Route::post('/', 'store');
     Route::get('/create', 'create');
-    Route::get('/{ban}', 'show');
-    Route::put('/{ban}', 'update');
-    Route::delete('/{ban}', 'destroy');
-    Route::get('/{ban}/edit', 'edit');
+    Route::get('/{motor}', 'show');
+    Route::put('/{motor}', 'update');
+    Route::delete('/{motor}', 'destroy');
+    Route::get('/{motor}/edit', 'edit');
 });
+Route::get('/selesai', [SelesaiController::class, 'index']);
 });

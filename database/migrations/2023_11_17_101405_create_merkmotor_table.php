@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('merkban', function (Blueprint $table) {
+        Schema::create('merkmotor', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
             $table->timestamps();
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('merkban');
+        Schema::dropIfExists('merkmotor');
     }
 };
