@@ -49,5 +49,13 @@ Route::controller(MotorController::class)->prefix("motor")->group(function () {
     Route::delete('/{motor}', 'destroy');
     Route::get('/{motor}/edit', 'edit');
 });
-Route::get('/selesai', [SelesaiController::class, 'index']);
+Route::controller(SelesaiController::class)->prefix("selesai")->group(function () {
+    Route::get('/', 'index');
+    Route::post('/', 'store');
+    Route::get('/create', 'create');
+    Route::get('/{selesai}', 'show');
+    Route::put('/{selesai}', 'update');
+    Route::delete('/{selesai}', 'destroy');
+    Route::get('/{selesai}/edit', 'edit');
+});
 });

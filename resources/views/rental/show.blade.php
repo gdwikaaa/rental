@@ -17,10 +17,9 @@
                   <p class="card-text">No KTP           : {{ $data->noktp }}</p>
                   <p class="card-text">Nama Penyewa     : {{ $data->nama }}</p>
                   <p class="card-text">Motor            : {{ $data->motor->nama }}</p>
-                  <p class="card-text">Tanggal Sewa     : {{ $data->tanggalsewa }}</p>
+                  <p class="card-text">Tanggal Sewa     : {{ $data->tanggalpinjam }}</p>
                   <p class="card-text">Tanggal Selesai  : {{ $data->tanggalselesai }}</p>
-                  <p class="card-text">Foto KTP         : </p>
-                  <img src="{{ asset('storage/gambar-user/'.$data->gambarktp) }}" alt="" width="400px" class="img-thumbnail">
+                  <img src="{{ asset('storage/gambar-ktp/'.$data->gambarktp) }}" alt="" width="400px" class="img-thumbnail">
                 </div>
             </div>
                   <a class="btn btn-sm btn-success" href="{{ url('/rental/') }}">Kembali</a>

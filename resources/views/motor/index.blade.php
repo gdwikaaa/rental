@@ -49,15 +49,16 @@
                                 <a class="btn btn-sm btn-warning"
                                     href="{{ url('/motor/' . $bb->id . '/edit') }}">Ubah</a>
                                     <a class="btn btn-sm btn-info"
-                                    href="{{ url('/motor/' . $bb->id) }}">Lihat
-                                </a>
+                                        href="{{ url('/motor/' . $bb->id) }}">Lihat </a>
+
                                 <form style="display: inline;" action="{{ url('/motor/' . $bb->id) }}" method ="POST">
                                     @csrf
                                     @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                                </form>
                             </td>
-                            @endcan
                         </tr>
+                        @endcan
                     @endforeach
                 </tbody>
             </table>

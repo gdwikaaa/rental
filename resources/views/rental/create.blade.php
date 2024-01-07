@@ -51,24 +51,10 @@
                     @error('motor')
                         <div class="invalid-feedback mb-2">{{ $message }}</div>
                     @enderror
-                </div>
                     </select>
                 </div>
                 <div>
-                    {{-- <label class="form-label @error('jenismotor') text-danger @enderror">PIlih Motor</label>
-                    <select class="form-select @error('jenismotor') is-invalid @enderror" name="jenismotor">
-                        @foreach ($jenismotor as $jm)
-                            <option value="{{ $jm->id }}" {{old('jenismotor') == $jm->id ? 'selected' : '' }}>{{ $jm->nama }}</option>
-                        @endforeach
-                    </select>
-                    @error('jenismotor')
-                        <div class="invalid-feedback mb-2">{{ $message }}</div>
-                    @enderror
-                </div>
-                    </select>
-                </div>
-                <div> --}}
-                    <label class="form-label @error('tanggalpinjam') text-danger @enderror">tanggalpinjam</label>
+                    <label class="form-label @error('tanggalpinjam') text-danger @enderror">Tanggal Pinjam</label>
                     <input class="form-control @error('tanggalpinjam') is-invalid @enderror" type="date" name="tanggalpinjam" value="{{old('tanggalpinjam')}}">
                     @error('tanggalpinjam')
                     <div class="invalid-feedback mb-2">{{$message }}</div?>
@@ -76,7 +62,7 @@
                     </select>
                 </div>
                 <div>
-                    <label class="form-label @error('tanggalselesai') text-danger @enderror">tanggalselesai</label>
+                    <label class="form-label @error('tanggalselesai') text-danger @enderror">Tanggal Selesai</label>
                     <input class="form-control @error('tanggalselesai') is-invalid @enderror" type="date" name="tanggalselesai" value="{{old('tanggalselesai')}}">
                     @error('tanggalselesai')
                     <div class="invalid-feedback mb-2">{{$message }}</div?>
@@ -84,7 +70,7 @@
                     </select>
                 </div>
                 <div>
-                    <label for="gambarktp"class="form-label @error('gambarktp') text-danger @enderror">Gambar motor</label>
+                    <label for="gambarktp"class="form-label @error('gambarktp') text-danger @enderror">Foto KTP</label>
                     <input class="form-control @error('gambarktp') is-invalid @enderror" type="file" name="gambarktp">
                         @error('gambarktp')
                         <div class="invalid-feedback mb-2">{{$message }}</div?>
@@ -92,15 +78,6 @@
                         </select>
                     </div>
                     <div>
-                        {{-- <label for="date"class="form-label @error('date') text-danger @enderror">Tanggal Pinjam</label>
-                        <input class="form-control @error('tanggal') is-invalid @enderror" type="date" name="date">
-                            @error('date')
-                            <div class="invalid-feedback mb-2">{{$message }}</div?>
-                                @enderror
-                    </select>
-                </div> --}}
-
-            </div>
             <div class="card-footer">
                 <button type="submit" href="{{ url('/') }}" class="btn btn-primary">Simpan</button>
             </div>

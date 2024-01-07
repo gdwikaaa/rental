@@ -17,15 +17,15 @@ class RentalController extends Controller
 
     public function index()
     {
-        $datarental = Rental::with('motor')->get();
+        $rental = Rental::with('motor')->get();
         // $datarental = Rental::with('jenismotor')->get();
 
-        return view('rental.index', ['data' => $datarental]);
+        return view('rental.index', ['data' => $rental]);
     }
 
     public function create()
     {
-        // $jenismotor = DB::table('jenismotor')->get();
+        // $jenismotor = DB::table('jenismotor')->get();S
         // $merkmotor = DB::table('merkmotor')->get();
         $motor = motor::all();
         // $jenismotor = jenismotor::all();
@@ -54,7 +54,7 @@ class RentalController extends Controller
         Storage::disk('public')->put($path,file_get_contents($gambarktp));
 
 
-       $datarental = rental::create([
+       $rental = rental::create([
             'noktp' => $validated['noktp'],
             'nama' => $validated['nama'],
             'motor_id' => $validated['motor'],
@@ -67,9 +67,9 @@ class RentalController extends Controller
         return redirect(url('/selesai/show'));
     }
 
-    public function update(Request $request, motor $motor)
+    public function update(Request $request, rental $rental)
     {
-        $datarental->update([
+        $rental->update([
             'noktp' => $request->noktp,
             'nama' => $request->nama,
             'motor_id' => $request->motor,
@@ -78,12 +78,12 @@ class RentalController extends Controller
             
         ]);
 
-        return redirect(url('/motor'));
+        return redirect(url('/rental'));
     }
 
-    public function edit(motor $motor)
+    public function edit(rental $rental)
     {
-        $data->load('motor');
+        $rental->load('motor');
         // ->select("motor.id", "nopol", "motor.nama","motor.harga", "jenismotor_id", "jenismotor.nama AS jenismotor_nama" ,"merkmotor_id", "merkmotor.nama AS merkmotor_nama")
         // ->join('merkmotor', 'merkmotor.id', '=', 'motor.merkmotor_id')
         // ->join('jenismotor', 'jenismotor.id', '=', 'motor.jenismotor_id')
@@ -92,13 +92,12 @@ class RentalController extends Controller
 
         $motor = motor::all();
 
-        return view('rental.edit', ['data' => $datarental, 'id' => $datarental->id,'motor' => $motor]);
+        return view('rental.edit', ['data' => $rental, 'id' => $rental->id,'motor' => $motor]);
     }
 
-    public function show(motor $motor)
+    public function show(rental $rental)
     {
-        $datarental->load('motor');
-        $motor->load('merkmotor');
+        $rental->load('motor');
         // $motor = DB::table('motor')
         // ->select("motor.id", "nopol", "motor.nama","motor.harga", "jenismotor_id", "jenismotor.nama AS jenismotor_nama" ,"merkmotor_id", "merkmotor.nama AS merkmotor_nama")
         // ->join('merkmotor', 'merkmotor.id', '=', 'motor.merkmotor_id')
@@ -106,14 +105,14 @@ class RentalController extends Controller
         // ->where('motor.id', $id)
         // ->first();
 
-        $jenismotor = jenismotor::all();
+        $motor = motor::all();
 
-        return view('motor.show', ['motormotor' => $motor, 'id' => $motor->id,'jenismotor' => $jenismotor]);
+        return view('rental.show', ['data' => $rental, 'id' => $rental->id,'motor' => $motor]);
     }
-    public function destroy(motor $motor)
+    public function destroy(rental $rental)
     {
-        $motor->delete();
+        $rental->delete();
 
-        return redirect(url('/motor'));
+        return redirect(url('/rental'));
 }
 }

@@ -54,7 +54,6 @@
                                     <a class="btn btn-sm btn-info"
                                     href="{{ url('/rental/' . $d->id) }}">Lihat
                                 </a>
-
                                 <form style="display: inline;" action="{{ url('/rental/' . $d->id) }}" method ="POST">
                                     @csrf
                                     @method('DELETE')
